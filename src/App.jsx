@@ -1,29 +1,19 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-// --- Placeholder Pages ---
-function Home() {
-  return <div className="p-6 text-center text-xl">🏡 Welcome to Promise Expeditions!</div>;
-}
-
-function Tours() {
-  return <div className="p-6 text-center text-xl">🌍 Explore our Tours.</div>;
-}
-
-function About() {
-  return <div className="p-6 text-center text-xl">ℹ️ Learn more About Us.</div>;
-}
-
-function Contact() {
-  return <div className="p-6 text-center text-xl">📞 Get in Touch with Us.</div>;
-}
+// Pages
+import Home from "./pages/Home";
+import Tours from "./pages/Tours";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1 pt-16"> {/* padding so content doesn't hide behind navbar */}
+      <main className="flex-1 pt-16">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tours" element={<Tours />} />
@@ -31,6 +21,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }
